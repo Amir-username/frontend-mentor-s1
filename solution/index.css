@@ -3,15 +3,15 @@
   font-style: normal;
   font-weight: 400;
   src: local("Roboto"), local("Roboto-Regular"),
-    url("./assets//fonts/Roboto-Regular.ttf") format("ttf");
+    url("../assets//fonts/Roboto-Regular.ttf") format("true type");
 }
 
 @font-face {
-  font-family: "Roboto";
+  font-family: "Roboto Bold";
   font-style: normal;
   font-weight: 700;
   src: local("Roboto Bold"), local("Roboto-Bold"),
-    url("./assets//fonts/Roboto-Bold.ttf") format("ttf");
+    url("../assets//fonts/Roboto-Bold.ttf") format("true type");
 }
 
 :root {
@@ -27,26 +27,118 @@
   /* Typography */
   --font-size-body: 16px;
   --font-reqular: "Roboto", sans-serif;
-  --font-bold: "Roboto Bold", sans-serif;
-}
-
-body {
-    font-size: var(--font-size-body);
-    font-family: var(--font-reqular);
-    margin: 0;
-}
-
-main {
-    display: grid;
-}
-
-.illustration {
-    min-width: 100%;
-    height: 300px;
+  --font-bold: "Roboto Bold";
 }
 
 *,
 ::after,
 ::before {
   box-sizing: inherit;
+}
+
+body {
+  font-size: var(--font-size-body);
+  font-family: var(--font-reqular);
+  margin: 0;
+  background-color: var(--neutral-blue-700);
+}
+
+main {
+  background-color: white;
+  display: grid;
+  width: 100%;
+  @media only screen and (min-width: 992px) {
+    margin-inline: auto;
+    margin-top: 8rem;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--gray);
+    border-radius: 2.4rem;
+    width: 1000px;
+    height: 600px;
+    padding: 1rem;
+  }
+}
+
+.illustration {
+  margin-inline: auto;
+  height: 300px;
+
+  @media only screen and (min-width: 992px) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2rem;
+    order: 2;
+  }
+}
+
+form {
+  padding: 0 2rem;
+  display: grid;
+
+  @media only screen and (min-width: 992px) {
+    padding: 3rem;
+    order: 1;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--neutral-blue-800);
+}
+
+.check-list {
+  display: flex;
+  gap: 1.5ch;
+  align-items: normal;
+  margin-top: 1em;
+}
+
+.check-list > img {
+  width: 20px;
+  height: 20px;
+}
+
+p {
+  margin: 0;
+  font-size: inherit;
+  font-family: var(--font-reqular);
+  color: var(--neutral-blue-700);
+}
+
+.form-group {
+  margin-top: 2rem;
+  display: grid;
+  gap: 0.3rem;
+}
+
+label {
+  color: var(--neutral-blue-700);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+input {
+  font-size: inherit;
+  padding: 1.3em 1em;
+  border: 1px var(--gray) solid;
+  border-radius: 6px;
+  color: var(--neutral-blue-800);
+}
+
+input ::placeholder {
+  color: var(--gray);
+}
+
+button {
+  margin-top: 1.5rem;
+  color: white;
+  background-color: var(--neutral-blue-800);
+  font-size: inherit;
+  font-family: inherit;
+  padding: 1.3em 0;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-weight: 700;
 }
