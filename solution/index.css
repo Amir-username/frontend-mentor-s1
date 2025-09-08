@@ -40,7 +40,9 @@ body {
   font-size: var(--font-size-body);
   font-family: var(--font-reqular);
   margin: 0;
-  background-color: var(--neutral-blue-700);
+  @media only screen and (min-width: 992px) {
+    background-color: var(--neutral-blue-700);
+  }
 }
 
 main {
@@ -75,7 +77,6 @@ main {
 form {
   padding: 0 2rem;
   display: grid;
-
   @media only screen and (min-width: 992px) {
     padding: 3rem;
     order: 1;
