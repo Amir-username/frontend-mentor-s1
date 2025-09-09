@@ -141,7 +141,7 @@ input ::placeholder {
   color: var(--gray);
 }
 
-button {
+a {
   margin-top: 1.5rem;
   color: white;
   background-color: var(--neutral-blue-800);
@@ -152,6 +152,8 @@ button {
   border: none;
   outline: none;
   font-weight: 700;
+  text-align: center;
+  text-decoration: none;
 
   &:hover,
   :focus-visible {

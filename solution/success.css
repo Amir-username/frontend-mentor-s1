@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto"), local("Roboto-Regular"),
+    url("../assets//fonts/Roboto-Regular.ttf") format("true type");
+}
+
+@font-face {
+  font-family: "Roboto Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Roboto Bold"), local("Roboto-Bold"),
+    url("../assets//fonts/Roboto-Bold.ttf") format("true type");
+}
+
+:root {
+  box-sizing: border-box;
+
+  /* Colors */
+  --primary: hsl(4, 100%, 67%);
+  --neutral-blue-800: hsl(234, 29%, 20%);
+  --neutral-blue-700: hsl(235, 18%, 26%);
+  --gray: hsl(0, 0%, 58%);
+  --white: hsl(0, 0, 100%);
+
+  /* Typography */
+  --font-size-body: 16px;
+  --font-reqular: "Roboto", sans-serif;
+  --font-bold: "Roboto Bold";
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+ background-color: var(--neutral-blue-700);
+ padding: 0;
+ margin: 0;
+
+ @media only screen and (min-width: 992px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100cqmax;
+  padding-bottom: 1rem;
+  font-size: var(--font-size-body);
+  font-family: var(--font-reqular);
+  margin: 0;
+  padding-top: 10rem;
+  background-color: white;
+
+  @media only screen and (min-width: 992px) {
+    height: 100%;
+    width: 500px;
+    display: flex;
+    padding: 4rem 2rem;
+    border-radius: 1rem;
+    gap: 1rem;
+    margin-top: 8rem;
+  }
+}
+
+.container {
+  padding: 0 2rem;
+  display: grid;
+
+
+}
+
+h1 {
+  font-size: 2.6rem;
+  color: var(--neutral-blue-800);
+  font-weight: 700;
+}
+
+p {
+  color: var(--neutral-blue-700);
+  line-height: 2.6ch;
+}
+
+button {
+  padding: 1.2rem 3rem;
+  margin: 0 3rem;
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+  background-color: var(--neutral-blue-800);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+
+  @media only screen and (min-width: 992px) {
+    margin: 0 1rem;
+    padding: 1rem 1rem;
+    border-radius: 8px;
+  }
+
+  &:hover,
+  :focus-visible {
+    background-color: var(--primary);
+    cursor: pointer;
+    transition-duration: 500ms;
+    box-shadow: 1px 2px 20px var(--primary);
+  }
+}
